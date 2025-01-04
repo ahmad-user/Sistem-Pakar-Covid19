@@ -1,5 +1,6 @@
-body
-{
+
+
+body{
 background:url(images/bg.jpg) repeat-x #e4e9ec top;
 padding:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -39,13 +40,6 @@ margin:auto;
 padding:0px;
 background-color:#FFFFFF;
 }
-/* #header{
-width:1000px;
-height:347px;
-background:url(images/covid.png) no-repeat center;
-background-position:0px 0px;
-margin:auto;
-} */
 #logo{
 float:left;
 padding:45px 0 0 15px;
@@ -161,7 +155,14 @@ float:left;
 padding:10px 10px 15px 15px;
 }
 .center_prod_box_big{
-width:100%;height: auto;float:left; text-align:left;padding:10px 10px 10px 10px; margin:0px;border:1px #F0F4F5 solid;
+width:100%;
+height: auto;
+text-align:left;
+padding:10px 10px 10px 10px; 
+margin:0px;border:1px #F0F4F5 solid;
+}
+.center_prod_box_big p{
+    padding-left: 20px;
 }
 .product_img_big{
 width:100%;
@@ -280,7 +281,6 @@ text-decoration:underline;
 .pagination a:hover:not(.active) {
 	background-color: #ddd;
 }
-
-.panel-body{
+.ada{
     text-align: center;
 }

@@ -35,7 +35,7 @@
     <div class="right_content">&nbsp;</div>
   </div>
   <div class="footer">
-    <div class="right_footer"> Create By STMIK GLOBAL</div>
+    <div class="right_footer"> Create By Muhammad Fadli</div>
   </div>
 </div>
 </body>

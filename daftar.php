@@ -7,6 +7,7 @@ include("koneksi.php");
 <title>Sistem Pakar</title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
 <link rel="stylesheet" type="text/css" href="style.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -47,22 +48,23 @@ include("koneksi.php");
       include("menu.php");
 	?>
     </div>
-    <div class="left_content">&nbsp;</div>
+    <div class="left_content" >&nbsp;</div>
     <div class="center_content">
-      <div class="center_title_bar">Daftar Penyakit</div>
+      <div class="center_title_bar" data-aos="fade-right">Daftar Penyakit</div>
       <div class="prod_box_big">
         <div class="center_prod_box_big">
-          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" name="pencarian" id="pencarian">			
+          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" name="pencarian" id="pencarian"   data-aos="fade-up">			
 			Nama Penyakit:<br>
-			<input type="text" name="search" class="field-input" id="search" placeholder="Search for names..">
-			<input type="submit" class="button" name="submit" id="submit" value="CARI">
+			<input type="text" name="search" class="field-input" id="search" placeholder="Search for names.." data-aos="fade-up">
+			<input type="submit" class="button" name="submit" id="submit" value="CARI" data-aos="fade-up">
 			</form>
 			<table id="customers">
 			  <tr>
-				<th width="8%">Kode Penyakit</th>
+				<th width="12%"> Kode Penyakit</th>
 				<th width="17%">Nama Penyakit</th>
 				<th width="70%">Defenisi</th>
 			  </tr>
+			  <div>
 			  <?php
 				$noPage = (isset($_GET['page']))? $_GET['page'] : 1;
 				$dataPerPage = 2;
@@ -76,12 +78,12 @@ include("koneksi.php");
 						 while ($data = mysqli_fetch_array($result)) {			  
 			  ?>
 			  <tr>
-				<td><div align="center"><strong><?php echo $data['kd_penyakit'] ?></strong></div></td>
-				<td><div align="left"><strong><?php echo $data['nm_penyakit'] ?></strong></div></td>
-				<td><div align="left"><strong><?php echo $data['definisi'] ?></strong></div></td>
+				<td><div align="center" data-aos="fade-up"><strong><?php echo $data['kd_penyakit'] ?></strong></div></td>
+				<td><div align="left" data-aos="fade-up"><strong><?php echo $data['nm_penyakit'] ?></strong></div></td>
+				<td><div align="left" data-aos="fade-up"><strong><?php echo $data['definisi'] ?></strong></div></td>
 			  </tr>
 			  <tr>
-				<td align="left" colspan="4"><strong>:: Gejala - Gejala ::</strong></td>
+				<td align="left" colspan="4" ><strong>:: Gejala - Gejala ::</strong></td>
 			  </tr>
 			  <?php
 				$query1 = "SELECT * FROM `gejala` INNER JOIN `relasi` ON `gejala`.`kd_gejala` = `relasi`.`kd_gejala` 
@@ -91,7 +93,7 @@ include("koneksi.php");
 				  while ($data1 = mysqli_fetch_array($result1)) {
 			  ?>
 			  <tr>
-				<td align="left" colspan="4"><?php echo $No_gejala ?>. <?php echo $data1['nm_gejala'] ?></td>
+				<td align="left" colspan="4" ><?php echo $No_gejala ?>. <?php echo $data1['nm_gejala'] ?></td>
 			  </tr>
 			  <?php
 				 $No_gejala++;
@@ -111,9 +113,9 @@ include("koneksi.php");
 						while ($data = mysqli_fetch_array($result)) {			  
 				?>
 			  <tr>
-				<td><div align="center"><strong><?php echo $data['kd_penyakit'] ?></strong></div></td>
-				<td><div align="left"><strong><?php echo $data['nm_penyakit'] ?></strong></div></td>
-				<td><div align="left"><strong><?php echo $data['definisi'] ?></strong></div></td>
+				<td><div align="center" data-aos="fade-up"><strong><?php echo $data['kd_penyakit'] ?></strong></div></td>
+				<td><div align="left" data-aos="fade-up"><strong><?php echo $data['nm_penyakit'] ?></strong></div></td>
+				<td><div align="left" data-aos="fade-up"><strong><?php echo $data['definisi'] ?></strong></div></td>
 			  </tr>
 			  <tr>
 				<td align="left" colspan="4"><strong>:: Gejala - Gejala ::</strong></td>
@@ -126,7 +128,7 @@ include("koneksi.php");
 				  while ($data1 = mysqli_fetch_array($result1)) {
 			  ?>
 			  <tr>
-				<td align="left" colspan="4"><?php echo $No_gejala ?>. <?php echo $data1['nm_gejala'] ?></td>
+				<td align="left" colspan="4" data-aos="fade-right"><?php echo $No_gejala ?>. <?php echo $data1['nm_gejala'] ?></td>
 			  </tr>	
 			  <?php
 				   $No_gejala++;
@@ -186,8 +188,16 @@ include("koneksi.php");
     <div class="right_content">&nbsp;</div>
   </div>
   <div class="footer">
-    <div class="right_footer"> Create By Global Institute</div>
+    <div class="right_footer"> Create By Muhammad Fadli</div>
   </div>
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+      once: false, 
+      duration: 1000, 
+      });
+   </script>
 </body>
 </html>

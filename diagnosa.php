@@ -7,6 +7,7 @@ include("koneksi.php");
 <title>Sistem Pakar</title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
 <link rel="stylesheet" type="text/css" href="style.css" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -49,7 +50,7 @@ include("koneksi.php");
     </div>
     <div class="left_content">&nbsp;</div>
     <div class="center_content">
-      <div class="center_title_bar">Silahkan Pilih Gejala Yang Anda Alami...!</div>
+      <div class="center_title_bar" data-aos="fade-right">Silahkan Pilih Gejala Yang Anda Alami...!</div>
       <div class="prod_box_big">
         <div class="center_prod_box_big">
           <?php 
@@ -161,6 +162,7 @@ include("koneksi.php");
 						while ($row=mysqli_fetch_array($query)){
 						?>
 						  <li><h4><strong>
+							<div data-aos="fade-up">
 							<input type="checkbox" name="gejala[]" id="gejala" value="<?php echo $row['kd_gejala'];?>">
 							<?php echo $row['nm_gejala'];?>(<?php echo $row['kd_gejala'];?>)
 						  </li></h4></strong>
@@ -169,10 +171,11 @@ include("koneksi.php");
 						?>
 					    </ul>
 						</td> </tr>
+						</div>
 						<tr>  
 						  <td width="54" align="Left">
-						  <button type="submit" class="btn btn-primary">Diagnosa</button>
-						  <button type="reset" class="btn btn-primary">Reset</button>  
+						  <button type="submit" class="btn btn-success">Diagnosa</button>
+						  <button type="reset" class="btn btn-warning">Reset</button>  
 						</td>
 						</tr>
 					  </table>
@@ -184,8 +187,16 @@ include("koneksi.php");
          <div class="right_content">&nbsp;</div>
         </div>
       <div class="footer">
-    <div class="right_footer"> Create By STMIK GLOBAL</div>
+    <div class="right_footer"> Create By Muhammad Fadli</div>
   </div>
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+      once: false, 
+      duration: 1000, 
+      });
+   </script>
 </body>
 </html>

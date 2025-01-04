@@ -1,0 +1,9 @@
+.panel-body{
+    text-align: center;
+}
+.panel-body h2{
+    color: blueviolet
+}
+.panel-body p{
+    color: green;
+}

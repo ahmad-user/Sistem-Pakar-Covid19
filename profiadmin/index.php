@@ -15,6 +15,8 @@ if (isset($_SESSION['nama']))
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/MoneAdmin.css" />
   <link rel="stylesheet" href="assets/plugins/Font-Awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="padTop53 " >
   <div id="wrap">
@@ -64,7 +66,7 @@ if (isset($_SESSION['nama']))
             <div class="row">
                 <div class="col-lg-4">
                     <div class="panel panel-default">
-                        <div class="panel-body" align="center"><h2>Selamat Datang Admin !!!</h2><br>
+                        <div class="panel-body"><h2 data-aos="fade-up">Selamat Datang Admin !!!</h2><br>
                           <p>Tujuan sistem pakar ini dibangun adalah untuk memudah kan para pasien untuk berkonsultasi dengan cepat dan mudah serta </br>
                           di berikan solusi terhadap permasalahan yang di alami  apabila diperlukan untuk tidakan lebih lanjut disarankan menemui dokter </br>
                           spesialis secara langsung.
@@ -81,8 +83,15 @@ if (isset($_SESSION['nama']))
     <p>Create Muhammad Fadli &copy;&nbsp;2023 &nbsp;</p>
     </div>
     <script src="assets/plugins/jquery-2.0.3.min.js"></script>
-     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+      once: false, 
+      duration: 1000, 
+      });
+   </script>
 </body>
 </html>
 <?php
